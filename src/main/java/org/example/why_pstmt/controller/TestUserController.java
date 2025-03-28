@@ -3,6 +3,7 @@ package org.example.why_pstmt.controller;
 import org.example.why_pstmt.model.dao.TestUserRepository;
 import org.example.why_pstmt.model.dto.TestUserDTO;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -21,6 +22,16 @@ public class TestUserController {
 
     @GetMapping("/")
     public String index() {
+        return "index";
+    }
+
+    @PostMapping("/")
+    public String login(@ModelAttribute TestUserDTO dto, Model model) throws SQLException {
+        boolean result = testUserRepository.login(dto.username(), dto.password());
+        model.addAttribute("username", dto.username());
+        model.addAttribute("message", result ? "로그인 성공 : %s님 환영합니다.".formatted(dto.username())
+                : "로그인 실패");
+
         return "index";
     }
 
