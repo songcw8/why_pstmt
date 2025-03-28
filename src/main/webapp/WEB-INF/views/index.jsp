@@ -1,16 +1,18 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: songchang-ug
-  Date: 25. 3. 28.
-  Time: 오후 12:11
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>반갑습니다.</title>
 </head>
 <body>
-
+    <h1>하이 에이치아이~</h1>
+    <header>
+        <nav>
+            <ul>
+                <li>
+                    <a href="join">가입</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
 </body>
 </html>
